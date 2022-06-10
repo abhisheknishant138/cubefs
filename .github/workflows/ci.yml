@@ -35,7 +35,7 @@ jobs:
           file: ./docker/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: abhishek138/cfs-base:latest  
+          tags: abhishek138/cfs-base:${{ steps.prepare.outputs.tag_name }}  
      
   ci-tests:
     runs-on: ubuntu-latest
