@@ -216,10 +216,14 @@ run_ltptest() {
     echo "        LTP test        ";
     echo "************************";
     LTPTestDir=$MntPoint/ltptest
+    echo "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
     LtpLog=/tmp/ltp.log
+    echo "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB";
     mkdir -p $LTPTestDir
+    echo "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC";
     nohup /bin/sh -c " /opt/ltp/runltp  -f fs -d $LTPTestDir > $LtpLog 2>&1; echo $? > /tmp/ltpret " &
     wait_proc_done "runltp" $LtpLog
+    echo "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD";
 }
 
 stop_client() {
